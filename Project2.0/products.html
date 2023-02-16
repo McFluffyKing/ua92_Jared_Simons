@@ -1,0 +1,222 @@
+<!--Jared Dylan Simons Block 3-->
+<!--Student No: L38876914-->
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">  
+    <title>The Sound Space Station - Products</title>
+    
+  </head>
+  <body>
+
+    <!--Navigation Bar-->
+    <!--This is the code for the Navagation bar used to navigate the web page-->
+    <!--The navagtion bar has been coded to contain 4 navagation tabs(Home/About Us/Contact/Products)-->
+    <!--Navagation bar also has a toggler icon so tabs can be accessed on smaller devices via icon-->
+    <nav class ="navbar navbar-expand-lg navbar-dark" style="background-color: #0089F7" >
+      <div class="container-fluid">
+          <a  class="navbar-brand" href="#"><img src="images/NewLogo.jpg" alt="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+              <span class="navbar-toggler-icon"></span>
+           </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a href="index.html" class="new-link" id="NavTextHome">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="about.html" class="new-link" id="NavTextAbout">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="contact.html" class="new-link" id="NavTextContact">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="products.html" class="new-link" id="NavTextProducts">Products</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <!--Showcase Banner-->
+    <!--This code is used to create the Showcase Banner for each page to display the pages name-->
+    <!--Showcase banner has a background image that has been added in css (styles.css)-->
+    <section class="text-light bg-primary p-5 text-center" id="showcase">
+      <div class="container-home">
+        <div>
+            <h1>Products</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--Main tag to hold all product figurw-->
+    <main>
+      <figure class="snip">                <!-- first produc -->
+        <h4>Tyler The Crator - Igor</h4>
+          <div class="image">
+            <img class="slide1" src="images/igor.jpg" alt="igor">
+          </div>
+          <a class="add-to-cart" href="#" id="AddBtn1">Add to Cart</a>
+          <figcaption>
+            <p id="ProdCaption1"><i class="bi bi-mic"></i>Artist: Tyler, The Creator<br><i class="bi bi-calendar-event"></i> Release Date: 17 May 2019</p>    
+            <div class="price">
+              <div class="real" data-price="15.00" id="Price1">£15.00</div>
+            </div>
+          </figcaption>
+      </figure>
+        
+      <figure class="snip">                <!-- second product -->
+        <h4>Lil Darkie - Swamp</h4>
+          <div class="image">
+            <img class="slide2" src="images/lilDNew.jpg" alt="LilD">
+          </div>
+          <a class="add-to-cart" href="#" id="AddBtn2">Add to Cart</a>
+          <figcaption>
+            <p id="ProdCaption2"><i class="bi bi-mic"></i>Artist: Lil Darkie<br><i class="bi bi-calendar-event"></i> Release Date: 25 December 2020</p>    
+            <div class="price">
+              <div class="real" data-price="10.00" id="Price2">£10.00</div>
+            </div>
+          </figcaption>
+      </figure>
+        
+      <figure class="snip">               <!-- third product-->
+        <h4>Travis Scott - Astroworld</h4>
+        <div class="image"> 
+          <img class="slide3" src="images/tscnew.jpg" alt="Travis">
+        </div>
+        <a class="add-to-cart" href="#" id="AddBtn3">Add to Cart</a>
+        <figcaption>
+          <p id="ProdCaption3"><i class="bi bi-mic"></i>Artist: Travis Scott<br><i class="bi bi-calendar-event"></i> Release Date: 03 August 2018</p>    
+          <div class="price">
+            <div class="real" data-price="14.99" id="Price3">£14.99</div>
+          </div>
+        </figcaption>
+      </figure>
+        
+      <figure class="snip">               <!-- Fourth product-->
+        <h4>Drake - Certified Lover Boy</h4>
+        <div class="image">
+          <img class="slide4" src="images/Drake.jpg" alt="Drake">
+        </div>
+        <a class="add-to-cart" href="#" id="AddBtn4">Add to Cart</a>
+        <figcaption>
+          <p id="ProdCaption4"><i class="bi bi-mic"></i>Artist: Drake<br><i class="bi bi-calendar-event"></i> Release Date: 03 September 2021</p>    
+          <div class="price">
+            <div class="real" data-price="15.99" id="Price4">£15.99</div>
+          </div>
+        </figcaption>
+      </figure>
+        
+      <figure class="snip">                <!-- fifth product-->
+        <h4>Joji - Smithereens</h4>
+        <div class="image">
+          <img class="slide5" src="images/joji.jpg" alt="Joji">
+        </div>
+        <a class="add-to-cart" href="#" id="AddBtn5">Add to Cart</a>
+        <figcaption>
+          <p id="ProdCaption5"><i class="bi bi-mic"></i>Artist: Joji<br><i class="bi bi-calendar-event"></i> Release Date:04 November 2022</p>    
+          <div class="price">
+            <div class="real" data-price="19.00" id="Price5">£19.00</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="snip">                <!-- sixth product-->
+        <h4>Oliver Tree - Cowboy Tears</h4>
+        <div class="image">
+          <img class="slide6" src="images/OliverT.jpg" alt="OliverTree">
+        </div>
+        <a class="add-to-cart" href="#" id="AddBtn6">Add to Cart</a>
+        <figcaption>
+          <p id="ProdCaption6"><i class="bi bi-mic"></i>Artist: Oliver Tree<br><i class="bi bi-calendar-event"></i> Release Date: 18 February 2022</p>    
+          <div class="price">
+            <div class="real" data-price="18.99" id="Price6">£18.99</div>
+          </div>
+        </figcaption>
+        
+      </figure>
+
+      <!--Cart button and Item display for product-->
+      <div class="cart"  title="Your Cart">
+        <button type="submit" class="btn btn-primary" id="CartBtn"><i class="bi bi-cart"></i> Cart</button>
+        <span id="count-item" data-count="0">0 item</span>
+      </div>
+      
+      <!--Check out code for checkout container-->
+      <div class="checkout-container">
+        <div class="table">
+          <span class="empty" id="CartMessage">Your cart is empty!</span>
+      
+          <div class="col1-name" id="ProdName"></div>
+          <div class="col2-price" id="ProdPrice"></div>
+        </div>
+        <div class="bin" id="ClearCart"><i class="bi bi-x-circle"></i> Clear All</div>
+        <div class="total">
+          <div class="total-text" id="TotalText">Total :</div>
+          <div class="total-amount" id="TotalNum">£ 0</div>
+        </div>
+        <div class="checkout" id="CheckBtn" onclick="document.getElementById('id01').style.display='block'">Check out</div>
+      </div>
+
+
+      <!--Bill container that displays once click purchase-->
+      <!--Will give total amount and will prompt user to enter their details to complete the purchase-->
+      <div id="id01" class="modal">
+        <div class="wrapper">
+          <div class="bill-content">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+            <h2 class="box-title">Checkout</h2>
+            <div class="price-total">
+              <span>PAY</span>
+              <div class="pay-last">£ 0</div>
+            </div>
+            <form>
+              <div class="form-text">
+                <label>Name</label>
+                <input name="card-number" type="text" required>
+              </div>
+              <div class="form-text">
+                <label>Surname</label>
+                <input name="card-number" type="text" required>
+              </div>
+              <div class="form-text">
+                <label>E-mail</label>
+                <input name="card-number" type="text" required>
+              </div>
+              <div class="form-text">
+                <label>Card Number</label>
+                <input name="card-number" type="text" required>
+              </div>
+              <div class="form-text">
+                <label>Card Verification Value</label>
+                <input name="name" type="text" placeholder="CVV" maxlength="3" required>
+              </div>
+              <div class="form-text" id="col01">
+                <label>Expiry Date</label>
+                <input name="card-number" type="text" placeholder="MM/YY"  required>
+              </div>
+              <div class="form-text"  id="col02">
+                <label>Coupon Code</label>
+                <input name="card-number" type="text">
+              </div>
+              <button id="end">PAY NOW</button>
+            </form>
+          </div>
+        </div>
+      </div>     
+    </main> 
+    <script  src="scriptprod.js"></script>
+  </body>
+</html>

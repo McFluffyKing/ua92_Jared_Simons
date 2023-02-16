@@ -1,0 +1,1325 @@
+/*Jared Dylan Simons Block 3*/
+/*Student No: L38876914*/
+/*Refrence - Authour:Minh Quang  Site:https://www.codehim.com/collections/javascript-shopping-cart-examples-with-demo/*/
+/*Imports for fonts*/
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Oswald:wght@400;500&family=Roboto+Condensed:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Oswald:wght@400;500&family=Roboto+Condensed:ital@0;1&display=swap');
+@import url('a11yChecker from a11y-checker');
+
+/*Heading 1 format*/
+h1{
+font-family: 'Orbitron', sans-serif;
+font-size:50px;
+color: #F0F8FF;
+text-shadow: 2px 2px 5px #69d2e7;
+text-align: center;
+font-weight: bolder;
+}
+
+/*Heading 2 format*/
+h2{
+  font-family: 'Orbitron', sans-serif;
+  font-size:50px;
+  color: #0089F7;
+  text-shadow: 2px 2px 5px #69d2e7;
+  text-align: center;
+  font-weight: bolder;
+  }
+
+/*Heading 4 format*/
+h4{
+  font-family: 'Orbitron', sans-serif;
+}
+
+/*Contact format*/
+#ContactHead{
+  font-family: 'Orbitron', sans-serif;
+  
+}
+
+/*Format Showcase banner text*/
+#paraHome{
+  color: #F0F8FF;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size:20px;
+}
+
+/*list formating*/
+li{
+  display: inline-block;
+  text-align: center;
+  margin-left: 1.2rem;
+  display: flex;
+  color: white;
+  font-size: 20px;
+    
+}
+
+/*Navbar responsive format*/
+.navbarResponsive{
+  color: #F0F8FF;
+}
+
+/*list format*/
+ul{
+  color: #F0F8FF;
+}
+
+/*Navbar responsive format*/
+.navbar-nav.ms-auto li a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: center;
+}
+
+/*html page formatting*/
+html{
+  height: 100%;
+}
+
+/*Body formatting*/
+body{
+  background: #69d2e7;
+  background: -moz-linear-gradient(-45deg, #69d2e7 0%, #a7dbd8 25%, #e0e4cc 46%, #63aeeb 54%, #379aeb 75%, #0089F7 100%);
+  background: -webkit-linear-gradient(-45deg, #69d2e7 0%,#a7dbd8 25%,#e0e4cc 46%,#63aeeb 54%,#379aeb 75%,#0089F7 100%);
+  background: linear-gradient(135deg, #69d2e7 0%,#a7dbd8 25%,#e0e4cc 46%,#63aeeb 54%,#379aeb 75%,#0089F7 100%);
+  background-attachment:fixed;
+  height: 100%;
+  margin: 0;
+  line-height:1.5em;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69d2e7', endColorstr='#fa6900',GradientType=1 );
+}
+
+/*container formatting*/
+.container {
+  max-width: 800px; 
+  margin: 1em auto; 
+  background:#FFF; 
+  padding:30px;
+  border-radius:5px;
+}
+
+/*Product placment*/
+.productcont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+     
+}
+
+/*Product formatting*/
+.product {
+  padding:1em; 
+  border:1px solid #E0E4CC; 
+  margin-right:1em; 
+  border-radius:5px;
+  flex: 100%;
+}
+
+/*Info card formatting*/
+.cart-container {
+  border:1px solid #E0E4CC;
+  border-radius:5px;
+  margin-top:1em;
+  padding:1em;
+}
+
+/*Button Format*/
+button, input[type="submit"] { 
+  border:1px solid #0089F7; 
+  color:#fff; 
+  background: #379aeb; 
+  padding:0.6em 1em;
+  font-size:1em; 
+  line-height:1; 
+  border-radius: 1.2em;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/*Table format*/
+table {
+  margin-bottom:1em;
+  border-collapse:collapse;
+}
+
+/*Table format*/
+table td, table th {
+  text-align:left;
+  padding:0.25em 1em;
+  border-bottom:1px solid #E0E4CC;
+}
+
+/*cart total format*/
+#carttotals {
+  margin-right:0;
+  margin-left:auto;
+}
+
+/*cart button format*/
+.cart-buttons {
+  width:auto;
+  margin-right:0;
+  margin-left:auto;
+  display:flex;
+  justify-content:flex-end;
+  padding:1em 0;
+}
+
+/*empty cart button format*/
+#emptycart {
+  margin-right:1em;
+}
+
+/*Table format*/
+table td:nth-last-child(1) {
+  text-align:right;
+}
+
+/*message prompt format*/
+.message {
+  border-width: 1px 0px;
+  border-style:solid;
+  border-color:#A7DBD8;
+  color:#679996;
+  padding:0.5em 0;
+  margin:1em 0;
+}
+
+/*content format*/
+.content {
+  padding: 16px;
+}
+  
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+  
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+/*showcase banner format*/
+#showcase{
+  background-image: url(images/backgroundshow.jpg);
+  background-repeat: no-repeat;
+}
+
+/*Info card background box formats*/
+#HomeBoxIntro,
+#HomeBoxContact,
+#HomeBoxAbout,
+#HomeBoxTwit,
+#HomeBoxInsta,
+#HomeBoxFB,
+#HomeBoxWA,
+#HomeBoxOC,
+#HomeBoxFuture
+{
+  background-color: #0089F7;
+  border-color: #F0F8FF;
+  border-width: 2px;  
+}
+
+/*Info card background hover box formats*/
+#HomeBoxIntro:hover,
+#HomeBoxAbout:hover,
+#HomeBoxContact:hover,
+#HomeBoxTwit:hover,
+#HomeBoxInsta:hover,
+#HomeBoxFB:hover,
+#HomeBoxWA:hover,
+#HomeBoxOC:hover,
+#HomeBoxFuture:hover
+{
+  background-color: #035598;
+  color: #F0F8FF;
+}
+
+/*price font format*/
+#Price{
+  font-family: 'Oswald', sans-serif;
+}
+
+/*add product text format*/
+#AddBtn1,
+#AddBtn2,
+#AddBtn3,
+#AddBtn4,
+#AddBtn5,
+#AddBtn6{
+  font-family: 'Oswald', sans-serif;
+}
+
+/*card text format*/
+#CardText{
+  color: #F0F8FF;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+/*card text format*/
+#CardTextContact,
+#CardTextIntro,
+#CardTextAbout,
+#CardTextTW,
+#CardTextIG,
+#CardTextFB,
+#CardTextWA,
+#CardTextOC,
+#CardTextFuture{
+  color: #F0F8FF;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+/*card title text format*/
+#CardTitleIntro,
+#CardTitleAbout,
+#CardTitleContact,
+#CardTitleTwitter,
+#CardTitleInsta,
+#CardTitleFB,
+#CardTitleWhats,
+#CardTitleOC,
+#CardTitleFuture
+{
+  font-family: 'Orbitron', sans-serif;
+  font-size:30px;
+  color: #F0F8FF;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/*card icons format*/
+#CardIconAbout,
+#CardIconContact,
+#CardIconIntro,
+#CardIconTwitt,
+#CardIconFB,
+#CardIconInsta,
+#CardIconWhats,
+#CardIconOC,
+#CardIconFuture
+{
+  font-size: 2em;
+}
+
+/*Navbar text formats*/
+#NavTextHome,
+#NavTextAbout,
+#NavTextContact,
+#NavTextProducts
+{
+  color: #F0F8FF;
+  font-family: 'Oswald', sans-serif;
+  line-height: 1.5em;
+}
+
+/*Home buttons format*/
+#BtnCardProducts,
+#BtnCardAbout,
+#BtnCardContact
+{
+  border-color: #F0F8FF;
+  border-width: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #035598;  
+}
+
+/*Home buttons hover format*/
+#BtnCardProducts:hover,
+#BtnCardAbout:hover,
+#BtnCardContact:hover
+{
+  background-color: #0089F7;
+  color: #F0F8FF;
+}
+
+/*Cart button format*/
+#CartBtn{
+  border-color: #F0F8FF;
+  border-width: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #035598;  
+}
+
+/*Cart button hover format*/
+#CartBtn:hover{
+  background-color: #0089F7;
+  color: #F0F8FF;
+}
+
+/*Clear cart option format*/
+#ClearCart{
+  font-family: 'Oswald', sans-serif;
+  background-color: #035598;
+  color: #F0F8FF;
+}
+
+/*Clear cart option hover format*/
+#ClearCart:hover{
+  background-color: #0089F7;
+  color: #F0F8FF;
+}
+
+/*cart message format*/
+#CartMessage{
+  font-family: 'Orbitron', sans-serif;
+}
+
+/*Total text format*/
+#TotalText{
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Total amount text format*/
+#TotalNum{
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Product caption text format*/
+#ProdCaption1,
+#ProdCaption2,
+#ProdCaption3,
+#ProdCaption4,
+#ProdCaption5,
+#ProdCaption6{
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+/*Count product format*/
+#count-item{
+  border-color: #F0F8FF;
+  border-width: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #035598;
+}
+
+/*Check out button format*/
+#CheckBtn{
+  font-family: 'Oswald', sans-serif;
+  border-color: #F0F8FF;
+  border-width: 0.5px;
+  background-color: #035598;
+  color:#F0F8FF;
+}
+
+/*Check out button label formnat*/
+#CheckLbl{
+  font-family: 'Oswald', sans-serif;
+  border-color: #F0F8FF;
+  border-width: 0.5px;
+  background-color: #035598;
+  color:#035598;
+}
+
+/*Check out button hoverr format*/
+#CheckBtn:hover{
+background-color: #0089F7;
+color: #F0F8FF;
+}
+
+/*Product name format*/
+#ProdName{
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Product price text format*/
+#ProdPrice{
+  font-family: 'Oswald', sans-serif;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,600);
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+html{
+  height: 100%;
+}
+
+/*Showcase banner format*/
+#paraHome{
+  color: aliceblue;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size:20px;
+}
+
+/*Main section format*/
+main{                                 /*START Refrence - Authour:Minh Quang  Site:https://www.codehim.com/collections/javascript-shopping-cart-examples-with-demo/*/
+    position: relative;
+    overflow: auto;
+}
+
+/*product figure format*/
+figure.snip{
+  position: relative;
+  align-items: center;
+  float:left;
+  overflow: hidden;   /* clipped content, no scroll */
+  margin: 10px 1%;
+  width:480px;
+  background: gray;
+  color: #fff;
+  text-align:center;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0, 0.15);   /* horizontal vertical blur color */
+}
+
+/*product figure format*/
+figure.snip *{           /* '*':select all elements */
+  transition: all 0.5s ease;  /* smooth zoom on/out */
+  box-sizing: border-box;  
+}
+
+/*product image format*/
+.image{                       /* left column */
+  background-color: #0089F7;
+  width:200%;
+  overflow:hidden;
+  align-items: center;
+}
+
+/*product image format*/
+.image img{
+  max-width:150%;
+  margin-top:70px;
+  align-items: center;
+  position: relative;
+  margin-left: 20px;
+  
+}
+
+/*product caption format*/
+figcaption{            
+  position:absolute;
+  width:50%;
+  right:0;
+  top:50%;
+  -webkit-transform: translateY(-50%); /* move up */
+  transform: translateY(-50%);
+  padding: 10px 35px;
+}
+
+/*product caption text format*/
+figure.snip h4,
+figure.snip p,
+figure.snip .price{
+  margin: 0 0 8px;                     /* top left bottom */
+}
+
+/*product caption h4 format*/
+figure.snip h4{
+  position: absolute;                  /* inside left column */
+  width:50%;
+  color:#ffffff;
+  top:10px;
+  text-transform: uppercase;          /* capitalize words */
+  font-weight: 400; 
+  letter-spacing: 1px;                /* distance between letters */
+  z-index:1;
+  font-size: medium;
+}
+
+/*product caption paragraph format*/
+figure.snip p{
+  font-size:0.7em;
+  font-weight: 500;
+  line-height:1.6em;                  /* distance between lines */
+}
+
+/*product caption price format*/
+figure.snip .price{
+  color:#ffffff;
+  font-size: 1.3em;
+  opacity:0.8;
+}
+
+/*product caption price format*/
+figure.snip .price s{
+  display:inline-block;
+  padding: 0 8px 0 0;
+  font-size: 0.85em;
+  color: #f39c12;
+}
+
+/*Add to Cart bottom format*/
+figure.snip .add-to-cart{
+  text-decoration: none;
+  position: absolute;
+  color:#ffffff;
+  bottom:0;
+  right:0;
+  font-weight: 600;
+  line-height: 44px;                 
+  font-size: 0.75em;
+  text-transform: uppercase;
+  width:50%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*Product image hover*/
+figure.snip img:hover{
+  opacity:0.6;
+  -webkit-transform: scale(1.3,1.3); /* zoom(x,y) */
+  transform: scale(1.3,1.3);
+}
+
+/*Add to cart hover*/
+figure.snip .add-to-cart:hover{
+  background-color: black;
+}
+
+/*product figure button format*/
+figure.snip button{                        
+  position:absolute;
+  bottom:50px;
+  font-size:1em;
+  color:white;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.6);
+  border: 2px solid white;
+  outline: none;
+}
+
+/*product figure button hover format*/
+figure.snip button:hover{                        
+  background-color: white;
+  color:black;
+  border: 2px solid black;
+}
+
+/*Product add animation*/
+.animation-fly{
+  position:absolute;
+  z-index:99;
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:100%;
+  transition: all 1s ease;
+  animation: zoom 1.5s;    /* <=> animation-name: zoom; animation-duration: 1.5s */
+}
+
+/* Google Chrome and Apple Safari */
+@-webkit-keyframes zoom{           
+  0% {transform: scale(0.4);}
+  25% {transform: scale(1);}
+  50% {transform: scale(1);}
+  100% {transform: scale(0.5);}
+}
+
+/* Mozilla Firefox */
+@-moz-keyframes zoom{               
+  0% {transform: scale(0.4);}
+  25% {transform: scale(1);}
+  50% {transform: scale(1);}
+  100% {transform: scale(0.5);}
+}
+
+/*  Opera */
+@-o-keyframes zoom{                      
+  0% {transform: scale(0.4);}
+  25% {transform: scale(1);}
+  50% {transform: scale(1);}
+  100% {transform: scale(0.5);}
+}
+
+/*Cart position*/
+.cart{
+  position:absolute;
+  top:0;
+  right:10px;
+  text-decoration:none;
+  z-index:10;
+  animation: fadeInLeft 2s;
+  
+}
+
+/*Fade in animations product page*/
+@-webkit-keyframes fadeInLeft {
+		0% {
+				opacity: 0;
+				-webkit-transform: translate3d(-100%, 0, 0);
+				transform: translate3d(-200%, 0, 0);
+		}
+		100% {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+		}
+}
+@-moz-keyframes fadeInLeft {
+		0% {opacity: 0;-webkit-transform: translate3d(-100%, 0, 0);transform: translate3d(-200%, 0, 0);}
+		100% {opacity: 1;-webkit-transform: none;transform: none;}
+}
+@-o-keyframes fadeInLeft {
+		0% {opacity: 0;-webkit-transform: translate3d(-100%, 0, 0);transform: translate3d(-200%, 0, 0);}
+		100% {opacity: 1;-webkit-transform: none;transform: none;}
+}
+
+/*cart image*/
+.cart img{
+  width:100px;
+  align-items: center;
+}
+
+/*Cart Text*/
+.cart span{
+  display:block;                          /* display like <p> */
+  background-color:black;
+  text-align:center;
+  margin-top:10px;
+  border-radius:5px;
+  box-shadow:5px 5px 2px #888888;
+  color: white;
+}
+
+/*Checkout container*/
+.checkout-container{
+  background: rgba(255, 255, 255, 0.75);
+  width: 300px;
+  height:400px;
+  position: fixed;
+  right: 0px;
+  bottom: 5px;
+  text-align:center;
+  z-index:10;
+}
+
+/*Table format*/
+.table{
+  width:98%;
+  height:200px;
+  overflow-y: scroll;     /* overflow = overflow-x + overflow-y */
+  border:2px solid black;
+  border-radius: 4px;
+  background:white;
+  padding:2%;
+}
+
+/*product name*/
+.col1-name{
+  width:70%;
+  height:100%;
+  float:left;
+}
+
+/*Product Price*/
+.col2-price{
+  width:29%;
+  float:left;
+  height:100%;
+}
+
+/* Scroll Bar format Google Chrome and Safari */
+.table::-webkit-scrollbar, .modal::-webkit-scrollbar                 
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Scroll Bar format Google Chrome and Safari */
+.table::-webkit-scrollbar-track, .modal::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Scroll Bar format Google Chrome and Safari */
+.table::-webkit-scrollbar-thumb, .modal::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+    border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+/* Scroll bar for Mozilla Firefox */
+.modal::-webkit-scrollbar-thumb{background-color:#035598;}
+.table::-moz-scrollbar, .modal::-moz-scrollbar                 
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Scroll bar for Mozilla Firefox */
+.table::-moz-scrollbar-track, .modal::-moz-scrollbar-track
+{
+	-moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Scroll bar for Mozilla Firefox */
+.table::-moz-scrollbar-thumb, .modal::-moz-scrollbar-thumb
+{
+	background-color: #000000;
+    border-radius: 10px;
+  -ms-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+/* Scroll Bar for Opera */
+.modal::-moz-scrollbar-thumb{background-color:#035598;}
+.table::-o-scrollbar, .modal::-o-scrollbar                 
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Scroll Bar for Opera */
+.table::-o-scrollbar-track, .modal::-o-scrollbar-track
+{
+	-moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+/* Scroll Bar for Opera */
+.table::-o-scrollbar-thumb, .modal::-o-scrollbar-thumb
+{
+	background-color: #000000;
+    border-radius: 10px;
+  -ms-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+
+/* Scroll Bar for Opera */
+.modal::-o-scrollbar-thumb{background-color:#035598;}
+.bin{
+  margin-bottom: 5px;
+  margin-top:5px;
+}
+
+/*clear cart image*/
+.bin span{
+  width:80%;
+  float:left;
+  text-align:left;
+  padding:10px;
+}
+
+/*clear cart image*/
+.bin img{
+  width:10%;
+  float:right;
+  
+}
+
+/*total price*/
+.total, .bin{
+  width:100%;
+  height:50px;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  font-weight: bold;  
+}
+
+/*Total text format*/
+.total-text{
+  width: 70%;
+  height: 40px;
+  float:left;
+  border-right: 2px solid black;
+  background-size: contain;
+  background-position: right;
+  font-family: 'Roboto Condensed', sans-serif;
+  
+}
+
+/*Total amount format*/
+.total-amount{
+  width:26%;
+  height:50px;
+  float:left;
+  padding-top:10px;
+}
+
+/*check out format*/
+.checkout{
+  width:50%;
+  margin: auto;
+  height:50px;
+  padding-top: .5em;
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  border: solid 2px #232323;
+  color: #232323;
+  border-radius: 0.4em;
+  cursor:pointer;  
+  background: white;
+}
+
+/*check out hover format*/
+.checkout:hover{
+  animation:none;
+}
+
+/*Product add animation*/
+.add-animation{
+  animation: jump 0.75s;
+  animation-iteration-count: infinite;   /*  loop animation */
+}
+
+/*Product add animation*/
+.add-animation2{
+  animation: shaker 0.75s;
+  animation-iteration-count: infinite;
+}
+
+/*button disabled*/
+.disabled{
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/*Responsive screen rotation*/
+@-o-keyframes jump {
+  0% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+  30% {
+    transform: scale(1, 0.8) translate(0px, 8px);
+  }
+  75% {
+    transform: scale(1, 1.1) translate(0px, -20px);
+  }
+  100% {
+    transform: scale(1, 1) translate(0px, 0px);
+  }
+}
+
+/*Responsive screen rotation*/
+@-webkit-keyframes jump {
+  0% {transform: scale(1, 1) translate(0px, 0px);}
+  30% {transform: scale(1, 0.8) translate(0px, 8px);}
+  75% {transform: scale(1, 1.1) translate(0px, -20px);}
+  100% {transform: scale(1, 1) translate(0px, 0px);}
+}
+
+/*Responsive screen rotation*/
+@-moz-keyframes jump {
+  0% {transform: scale(1, 1) translate(0px, 0px);}
+  30% {transform: scale(1, 0.8) translate(0px, 8px);}
+  75% {transform: scale(1, 1.1) translate(0px, -20px);}
+  100% {transform: scale(1, 1) translate(0px, 0px);}
+}
+
+/*Responsive screen rotation*/
+@-webkit-keyframes shaker {
+  0% {
+    transform: rotate(0deg);
+  }
+  29% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(3deg);
+  }
+  31% {
+    transform: rotate(4deg);
+  }
+  33% {
+    transform: rotate(3deg);
+  }
+  35% {
+    transform: rotate(0deg);
+  }
+  37% {
+    transform: rotate(-3deg);
+  }
+  39% {
+    transform: rotate(-4deg);
+  }
+  41% {
+    transform: rotate(-3deg);
+  }
+  43% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(3deg);
+  }
+  47% {
+    transform: rotate(4deg);
+  }
+  49% {
+    transform: rotate(3deg);
+  }
+  51% {
+    transform: rotate(0deg);
+  }
+  53% {
+    transform: rotate(-3deg);
+  }
+  55% {
+    transform: rotate(-4deg);
+  }
+  57% {
+    transform: rotate(-3deg);
+  }
+  59% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/*Responsive screen rotation Fire Fox*/
+@-moz-keyframes shaker {
+  0% {transform: rotate(0deg);}
+  29% {transform: rotate(0deg);}
+  30% {transform: rotate(3deg);}
+  31% {transform: rotate(4deg);}
+  33% {transform: rotate(3deg);}
+  35% {transform: rotate(0deg);}
+  37% {transform: rotate(-3deg);}
+  39% {transform: rotate(-4deg);}
+  41% {transform: rotate(-3deg);}
+  43% {transform: rotate(0deg);}
+  45% {transform: rotate(3deg);}
+  47% {transform: rotate(4deg);}
+  49% {transform: rotate(3deg);}
+  51% {transform: rotate(0deg);}
+  53% {transform: rotate(-3deg);}
+  55% {transform: rotate(-4deg);}
+  57% {transform: rotate(-3deg);}
+  59% {transform: rotate(0deg);}
+  100% {transform: rotate(0deg);}
+}
+
+/*Responsive screen rotation Opera*/
+@-o-keyframes shaker {
+  0% {transform: rotate(0deg);}
+  29% {transform: rotate(0deg);}
+  30% {transform: rotate(3deg);}
+  31% {transform: rotate(4deg);}
+  33% {transform: rotate(3deg);}
+  35% {transform: rotate(0deg);}
+  37% {transform: rotate(-3deg);}
+  39% {transform: rotate(-4deg);}
+  41% {transform: rotate(-3deg);}
+  43% {transform: rotate(0deg);}
+  45% {transform: rotate(3deg);}
+  47% {transform: rotate(4deg);}
+  49% {transform: rotate(3deg);}
+  51% {transform: rotate(0deg);}
+  53% {transform: rotate(-3deg);}
+  55% {transform: rotate(-4deg);}
+  57% {transform: rotate(-3deg);}
+  59% {transform: rotate(0deg);}
+  100% {transform: rotate(0deg);}
+}
+
+/*Bill Formats*/
+.modal{
+  display:none;
+  position:fixed;
+  z-index: 99;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,0.4);
+  
+}
+
+/*Bill wrapper format for animation*/
+.wrapper{
+  background-color: white;
+  width:50%;
+  box-shadow: 10px 10px 0 #035598; 
+  border-bottom: 1px solid #035598;
+  margin: 1% auto 2% auto;
+  animation: animatezoom .6s;
+  -webkit-animation: animatezoom .6s;
+}
+
+/*Zoom animation Chrome/Safari*/
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+/*Zoom animation fire fox*/
+@-moz-keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/*Zoom animation Opera*/
+@-o-keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/*Bill page style format*/
+.wrapper:before {
+  background: linear-gradient(-135deg, #000 10px, transparent 0), linear-gradient(135deg, #000 10px, transparent 0), linear-gradient(-134deg, #0089F7 13px, transparent 0), linear-gradient(134deg, #035598 13px, transparent 0);
+  background-repeat: repeat;
+  background-size: 21px 32px;
+  content: "";
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 15px;
+}
+
+/*Bill page style format*/
+.wrapper:after {
+  background: linear-gradient(-45deg, #000 10px, transparent 0), linear-gradient(45deg, #000 10px, transparent 0), linear-gradient(-45deg, #035598 13px, transparent 0), linear-gradient(45deg, #0089F7 13px, transparent 0);
+  background-repeat: repeat;
+  background-size: 21px 32px;
+  content: "";
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 30px;
+}
+
+/*Bill page style format*/
+.bill-content{
+  width:95%;
+  margin: auto;
+}
+
+/*Bill page h1 style format*/
+.wrapper h1{
+  text-transform: uppercase;
+}
+
+/*Bill title format*/
+.box-title{
+  text-shadow: 2px 2px 0 #0089F7;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+/*Bill page price total style format*/
+.price-total{
+  background:#0089F7;
+  font-size: 1.5em;
+  text-align:center;
+  color: #F0F8FF;
+  font-weight: 800;
+  padding:5px 0;
+  margin: 15px 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Bill page price total style format*/
+.price-total span{
+  font-size: .75em;
+  color:white;
+}
+
+/*Bill page text style format*/
+.form-text{
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+
+/*Bill page form style format*/
+form{
+  margin: 0 -5px;
+}
+
+/*Bill page label style format*/
+label{
+  display: block;
+  font-size: .9em;
+  text-transform: uppercase;
+  font-weight:bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/*Bill page text input style format*/
+input{
+  border: 3px solid black;
+  width:95%;
+  padding: 7px;
+  font-size: 1.1em;
+}
+
+/*Bill page text input style format*/
+input:focus{       /* click on */
+  outline: 0;
+  background: #63aeeb;
+}
+
+/*Bill button style format*/
+.wrapper button{
+  font-size: 1.2em;
+  padding: 10px;
+  border: 0;
+  line-height: 1.6;
+  box-shadow: 3px 3px 0 #035598;
+  cursor: pointer;
+  background: #0089F7;
+  transition: ease-in all .3s;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+}
+
+/*Bill button style format*/
+.wrapper button:hover, .wrapper button:focus{
+  background:#035598;
+  color:#F0F8FF;
+  box-shadow: 5px 5px 0 #0089F7;
+  outline: none;
+}
+
+/*Bill cupon format*/
+#coupon{
+  border: 3px solid black;
+  background:white;
+  color: #F0F8FF;
+  box-shadow: none;
+  border-radius: 4px;
+  animation: shrink  1s infinite;
+}
+
+/*Bill cupon hover format*/
+#coupon:hover{
+  animation: none;
+  background: #0089F7;
+  color: #035598;
+  border: 3px solid #0089F7;
+}
+
+/*Bill end*/
+#end{
+  float:center;
+  
+}
+
+/*Resize for screen Chrome/Safari*/
+@-webkit-keyframes shrink {
+  0% {
+    transform: scaleY(1);
+  }
+  49% {
+    transform: scale(0.97, 0.97);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/*Resize for screen FireFox*/
+@-moz-keyframes shrink {
+  0% {
+    transform: scaleY(1);
+  }
+  49% {
+    transform: scale(0.97, 0.97);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/*Resize for screen Opera*/
+@-o-keyframes shrink {
+  0% {
+    transform: scaleY(1);
+  }
+  49% {
+    transform: scale(0.97, 0.97);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/*Bill close */
+.close{
+  float:right;
+  margin-right:10px;
+  margin-top:-10px;
+  font-size:35px;
+  cursor:pointer;
+}
+
+/*Product and price col format*/
+#col01, #col02{
+  width:46.5%;
+  float:left;
+}
+
+/*price col format*/
+#col02{
+  margin-left:2%;
+}
+
+/* Responsive format for screen size */
+@media screen and (max-width:520px){    /* apply to screen sizes < or = 520px */
+  figure.snip{width:100%;top:130px;}
+  figcaption p{display:none;}
+  figure.snip h4{
+    font-size: 12px;
+    text-transform: none;
+  }
+  figure.snip img:hover{
+    -webkit-transform: scale(1.45,1.45);
+    transform: scale(1.45,1.45);
+  }
+  .modal{
+    overflow: auto; /* Enable scroll if needed */
+  }
+  .wrapper{
+    width:90%;
+  }
+  .checkout-container{display:none;}
+}
+
+/* Responsive format for screen size ip7 */
+@media screen and (max-width:380px){         
+  .cart img{width:50px}
+  figure.snip{top:80px;}
+  .wrapper{
+    width:95%;
+  }
+  input{
+    width:94%;
+  }
+  #col01, #col02{
+    width:97%;
+  }
+  #col02{
+    margin-left:0;
+  }
+  
+}
+
+/* Responsive format for screen size ip5 */
+@media screen and (max-width:325px){          
+  .checkout-container{
+    width:280px;
+  }
+  .bin span{
+    width: 70%;
+  }
+  #coupon, #end{
+    width:100%;
+  }
+  #end{width:90%;margin:10px}
+}                                                           /*END Refrence - Authour:Minh Quang  Site:https://www.codehim.com/collections/javascript-shopping-cart-examples-with-demo/*/
+
+
